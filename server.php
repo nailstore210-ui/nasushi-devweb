@@ -6,6 +6,8 @@ require __DIR__ . '/fpdf/fpdf.php'; // PDF
 use Twilio\Rest\Client;
 
 // الاتصال بقاعدة البيانات
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
 $connexion = new mysqli(
     getenv("DB_HOST"),
