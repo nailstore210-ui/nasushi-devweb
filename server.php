@@ -259,4 +259,3 @@ echo json_encode([
     "invoice"=>"invoice-$orderId.pdf"
 ], JSON_UNESCAPED_UNICODE);
 ?>
-
