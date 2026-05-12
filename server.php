@@ -1,15 +1,7 @@
-<!DOCTYPE html>
-<html lang="ar">
-<head>
-  <meta charset="UTF-8">
-    <title>NA_SUSHI_21</title>
-    <link rel="stylesheet" href="style.css?<?php echo time(); ?>">
-</head>
-<body>
-    <?php
+<?php
 header("Content-Type: application/json; charset=utf-8");
 require __DIR__ . '/vendor/autoload.php'; // Twilio
-require("fpdf/fpdf.php"); // PDF
+require __DIR__ . '/fpdf/fpdf.php'; // PDF
 
 use Twilio\Rest\Client;
 
@@ -268,10 +260,3 @@ echo json_encode([
 ], JSON_UNESCAPED_UNICODE);
 ?>
 
-
-</body>
-<<<<<<< HEAD
-</html>
-=======
-</html>
->>>>>>> 2a4804d2c9d2f33d2683a156f843ffa1767402b3
