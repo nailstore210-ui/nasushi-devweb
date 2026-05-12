@@ -136,10 +136,11 @@ $usedPoints = intval($data['usedPoints'] ?? 0);
 $time = date("Y-m-d H:i:s");
 
 // تحقق من الهاتف والسلة
-if(!preg_match("/^[0-9]{10}$/", $phone)) {
+if(!preg_match("/^(\+213|0)[0-9]{9}$/", $phone)) {
     echo json_encode(["status"=>"error","message"=>"رقم الهاتف غير صالح"]);
     exit;
 }
+
 if(empty($products)) {
     echo json_encode(["status"=>"error","message"=>"السلة فارغة"]);
     exit;
