@@ -6,6 +6,7 @@ require __DIR__ . '/fpdf/fpdf.php'; // PDF
 use Twilio\Rest\Client;
 
 // الاتصال بقاعدة البيانات
+
 $connexion = new mysqli(
     getenv("DB_HOST"),
     getenv("DB_USER"),
@@ -13,10 +14,12 @@ $connexion = new mysqli(
     getenv("DB_NAME"),
     getenv("DB_PORT")
 );
-if($connexion->connect_error){
-    die(json_encode(["status"=>"error","message"=>"⚠️ Connection impossible: ".$connexion->connect_error]));
-}
 
+if ($connexion->connect_error) {
+    die(json_encode([
+        "status" => "error",
+        "message" => "⚠️ Connection impossible: " . $connexion->connect_error
+    ]));
 function updatePrice($item, $choice) {
         $prices = [
         "California Roll" => [
