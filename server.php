@@ -20,6 +20,12 @@ if ($connexion->connect_error) {
         "status" => "error",
         "message" => "⚠️ Connection impossible: " . $connexion->connect_error
     ]));
+}
+
+echo json_encode([
+    "status" => "success",
+    "message" => "✅ Connected successfully!"
+]);
 function updatePrice($item, $choice) {
         $prices = [
         "California Roll" => [
