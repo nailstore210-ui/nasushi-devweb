@@ -270,4 +270,8 @@ echo json_encode([
 
 
 </body>
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> 2a4804d2c9d2f33d2683a156f843ffa1767402b3
