@@ -143,10 +143,10 @@ $time = date("Y-m-d H:i:s");
 // }
 
 
-if(empty($products)) {
-    echo json_encode(["status"=>"error","message"=>"السلة فارغة"]);
-    exit;
-}
+//if(empty($products)) {
+//  echo json_encode(["status"=>"error","message"=>"السلة فارغة"]);
+//exit;
+//}
 
 // حساب الأسعار
 $total = 0;
