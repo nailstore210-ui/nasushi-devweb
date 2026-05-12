@@ -1,0 +1,93 @@
+
+      body { 
+      font-family: Tahoma, sans-serif; 
+      background:#fff; 
+      margin:0; 
+      padding:0; 
+      direction:rtl; 
+    }
+
+    /* ✅ الهيدر */
+    
+    .header-logo img {
+      width:100%;              
+    }
+    .header-text {
+      text-align:center;
+        padding:20px;   
+    
+    }
+
+    /* ✅ المنيو يبقى في بلاصتو */
+    .menu { 
+      display:flex; 
+      flex-wrap:wrap; 
+      justify-content:center; 
+      margin:20px; 
+    }
+    .item { 
+      background:#f9f9f9; 
+      border:1px solid #ddd; 
+      border-radius:8px; 
+      width:280px; 
+      margin:10px; 
+      padding:10px; 
+      text-align:center; 
+    }
+    .item img { width:100%; border-radius:8px; }
+    .price { color:#b22222; font-weight:bold; margin:5px; }
+    select { padding:5px; margin-top:5px; }
+    button { background:#b22222; color:white; border:none; padding:8px; margin-top:8px; border-radius:5px; cursor:pointer; }
+    button:hover { background:#8b1a1a; }
+
+    /* ✅ نموذج الزبون عمودي */
+    form { 
+      background:#f9f9f9; 
+      margin:20px auto; 
+      padding:20px; 
+      border-radius:8px; 
+      width:300px; 
+    }
+    form input, form select { 
+      width:100%; 
+      display:block; 
+      padding:8px; 
+      margin:8px 0; 
+      border:1px solid #ddd; 
+      border-radius:5px; 
+    }
+
+    /* ✅ الفوتر */
+    footer {
+      background:#b22222;
+      color:white;
+      padding:20px;
+    }
+    .footer-content {
+      display:flex;              /* سطر واحد */
+      justify-content:flex-end;  /* البطاقة على اليمين */
+      align-items:center;
+      gap:20px;                  /* مسافة بين البطاقة والنصوص */
+    }
+    footer img {
+      width:300px;               /* البطاقة أكبر شوي */
+      border-radius:8px;
+    }
+    .footer-text {
+      text-align:right;
+    }
+
+    /* ✅ تحسينات عامة */
+    @media (max-width: 600px) {
+      .menu { flex-direction:column; align-items:center; }
+      .item { width:90%; }
+      .footer-content { flex-direction:column; align-items:center; text-align:center; }
+      footer img { width:80%; }
+    }   
+
+      /* ✅ استايل عام */
+    h1, h2 {
+      color:#000000;
+    }    
+        
+    

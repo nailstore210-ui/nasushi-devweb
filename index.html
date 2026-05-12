@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>NA_SUSHI_21</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="header-content">
+    <!-- اللوغو -->
+    <div class="header-logo">
+      <img src="images/NA_SUSHI_21 web site.png" alt="شعار NA Sushi">
+    </div>
+    <!-- النصوص -->
+    <div class="header-text">
+      <h1 id="title">   مطعم Na_Sushi_21 يرحب بكم</h1>
+      <p id="subtitle">0792106084 | سكيكدة / فلفلة</p>
+      <select id="langSelect" onchange="changeLang(this.value)">
+        <option value="ar">العربية</option>
+        <option value="fr">Français</option>
+        <option value="en">English</option>
+      </select>
+    </div>
+  </div>
+</header>
+
+<div id="notification"></div>
+<div id="points">رصيد نقاطك: 0 🎁</div>
+
+
+<!-- 🍣 المنيو -->
+<section class="menu">
+
+  <!-- California Roll -->
+  <div class="item">
+    <img src="images/californiaroll.png" alt="California Roll" width="250">
+    <h3>California Roll (8 piece)</h3>
+    <p>الأرز من الخارج، النوري من الداخل، الحشو خيار + جبن + جزر + أفوكادو.</p>
+    <select onchange="updatePrice('California Roll', this.value)">
+      <option value="">اختر الحشو</option>
+      <option value="THON">تونة - 1090 DA T</option>
+      <option value="POULET CRISPY">دجاج كريسبي - 1190DA P</option>
+      <option value="CREVETTE">كروفات - 1390DA C</option>
+      <option value="VEGITARIEEN">خضار - 1190DA V</option>
+      <option value="SAUMON">سلمون - 1390DA SA</option>
+      <option value="SURIMI">سوريمي - 1390DA SU</option>
+    </select>
+    <p class="price" id="California Roll-price">السعر: -</p>
+    <button onclick="addToCart('California Roll')">أضف للسلة</button>
+  </div>
+
+  <!-- Crispy Roll -->
+  <div class="item">
+    <img src="images/crispy.png" alt="Crispy Roll" width="200">
+    <h3>Crispy Roll (8 piece)</h3>
+    <p>نفس الفوتوماكي لكن مقرمش، يقلى مع فتات التيمبورا.</p>
+    <select onchange="updatePrice('Crispy Roll', this.value)">
+      <option value="">اختر الحشو</option>
+      <option value="THON">تونة - 1140DA T</option>
+      <option value="POULET CRISPY">دجاج كريسبي - 1240DA P</option>
+      <option value="CREVETTE">كروفات - 1440DA C</option>
+      <option value="SAUMON">سلمون - 1440DA SA</option>
+      <option value="SURIMI">سوريمي - 1440DA SU</option>
+    </select>
+    <p class="price" id="Crispy Roll-price">السعر: -</p>
+    <button onclick="addToCart('Crispy Roll')">أضف للسلة</button>
+  </div>
+
+  <!-- Futomaki -->
+  <div class="item">
+    <img src="images/futomaki.png" alt="Futomaki" width="200">
+    <h3>Futomaki (8 piece)</h3>
+    <p>رول أكبر بحشوات متنوعة بالجبن والخيار والجزر.</p>
+    <select onchange="updatePrice('Futomaki', this.value)">
+      <option value="">اختر الحشو</option>
+      <option value="THON">تونة - 1090DA T</option>
+      <option value="POULET CRISPY">دجاج كريسبي - 1190DA P</option>
+      <option value="CREVETTE">كروفات - 1390DA C</option>
+      <option value="VEGITARIEEN">خضار - 1190DA V</option>
+      <option value="SAUMON">سلمون - 1390DA SA</option>
+      <option value="SURIMI">سوريمي - 1390DA SU</option>
+    </select>
+    <p class="price" id="Futomaki-price">السعر: -</p>
+    <button onclick="addToCart('Futomaki')">أضف للسلة</button>
+  </div>
+
+  <!-- Hosomaki -->
+  <div class="item">
+    <img src="images/hosomaki.png" alt="Hosomaki" width="200">
+    <h3>Hosomaki (8 piece)</h3>
+    <p>رول صغير بورق النوري وحشوة واحدة فقط.</p>
+    <select onchange="updatePrice('Hosomaki', this.value)">
+      <option value="">اختر الحشو</option>
+      <option value="THON">تونة - 990DA T</option>
+      <option value="POULET CRISPY">دجاج كريسبي - 990DA P</option>
+      <option value="CREVETTE">كروفات - 1190DA C</option>
+      <option value="AVOCAT">أفوكادو - 1090DA A</option>
+      <option value="SAUMON">سلمون - 1190DA SA</option>
+      <option value="SURIMI">سوريمي - 1150DA SU</option>
+    </select>
+    <p class="price" id="Hosomaki-price">السعر: -</p>
+    <button onclick="addToCart('Hosomaki')">أضف للسلة</button>
+  </div>
+
+<!-- Dragon Roll -->
+  <div class="item">
+    <img src="images/dragonroll.png" alt="Dragon Roll" width="200">
+    <h3>Dragon Roll (8 piece)</h3>
+    <p>رول مع شرائح أفوكادو فوقه ليعطي شكل التنين.</p>
+    <select onchange="updatePrice('Dragon Roll', this.value)">
+      <option value="">اختر الحشو</option>
+      <option value="THON">تونة - 1690DA T</option>
+      <option value="POULET CRISPY">دجاج كريسبي - 1690DA P</option>
+      <option value="CREVETTE">كروفات - 1890DA C</option>
+      <option value="SAUMON">سلمون - 1890DA SA</option>
+      <option value="SURIMI">سوريمي - 1890DA SU</option>
+    </select>
+    <p class="price" id="Dragon Roll-price">السعر: -</p>
+    <button onclick="addToCart('Dragon Roll')">أضف للسلة</button>
+  </div>
+
+  <!-- Nigiri -->
+  <div class="item">
+    <img src="images/nigiri.png" alt="Nigiri" width="200">
+    <h3>Nigiri (6 piece)</h3>
+    <p>كرة أرز مضغوطة مع شريحة سلمون أو كروفات أو أفوكادو.</p>
+    <select onchange="updatePrice('Nigiri', this.value)">
+      <option value="">اختر الحشو</option>
+      <option value="CREVETTE">كروفات - 1490DA C</option>
+      <option value="SAUMON">سلمون - 1490DA SA</option>
+      <option value="AVOCAT">أفوكادو - 1290DA A</option>
+    </select>
+    <p class="price" id="Nigiri-price">السعر: -</p>
+    <button onclick="addToCart('Nigiri')">أضف للسلة</button>
+  </div>
+
+  <!-- Gyoza -->
+  <div class="item">
+    <img src="images/gyoza.png" alt="Gyoza" width="200">
+    <h3>Gyoza (5 piece)</h3>
+    <p>رافيولي يابانية محشوة باللحم أو الدجاج أو الكروفات، مقرمشة من الأسفل وطرية من الأعلى.</p>
+    <select onchange="updatePrice('Gyoza', this.value)">
+      <option value="">اختر الحشو</option>
+      <option value="POULET">دجاج - 590DA P</option>
+      <option value="VIANDE">لحم - 790DA V</option>
+      <option value="CREVETTE">كروفات - 990DA C</option>
+    </select>
+    <p class="price" id="Gyoza-price">السعر: -</p>
+    <button onclick="addToCart('Gyoza')">أضف للسلة</button>
+  </div>
+
+  <!-- Crunchy Roll -->
+  <div class="item">
+    <img src="images/crunchy.png" alt="Crunchy Roll" width="200">
+    <h3>Crunchy Roll (8 piece)</h3>
+    <p>كاليفورنيا رول لكن مقرمش أكثر، يقلى مع خليط البيض والفرينة وفتات التيمبورا.</p>
+    <select onchange="updatePrice('Crunchy Roll', this.value)">
+      <option value="">اختر الحشو</option>
+      <option value="THON">تونة - 1140DA T</option>
+      <option value="POULET CRISPY">دجاج كريسبي - 1240DA P</option>
+      <option value="CREVETTE">كروفات - 1440DA C</option>
+      <option value="SAUMON">سلمون - 1440DA SA</option>
+      <option value="SURIMI">سوريمي - 1440DA SU</option>
+    </select>
+    <p class="price" id="Crunchy Roll-price">السعر: -</p>
+    <button onclick="addToCart('Crunchy Roll')">أضف للسلة</button>
+  </div>
+
+<!-- Futomaki chesse -->
+  <div class="item">
+    <img src="images/futomakichesse.png" alt="Futomaki chesse" width="200">
+    <h3>Futomaki chesse (8 piece)</h3>
+    <p>نفس الفوطوماكي لكن يوضع فوقه قطع جبن الهمبرغر تكون ذايبة شوي.</p>
+    <select onchange="updatePrice('Futomaki chesse', this.value)">
+      <option value="">اختر الحشو</option>
+      <option value="THON">تونة - 1190DA T</option>
+      <option value="POULET CRISPY">دجاج كريسبي - 1290DA P</option>
+      <option value="CREVETTE">كروفات - 1490DA C</option>
+      <option value="SAUMON">سلمون - 1490DA SA</option>
+      <option value="SURIMI">سوريمي - 1490DA SU</option>
+    </select>
+    <p class="price" id="Futomaki chesse-price">السعر: -</p>
+    <button onclick="addToCart('Futomaki chesse')">أضف للسلة</button>
+  </div>
+
+<!-- California roll chesse -->
+  <div class="item">
+    <img src="images/californiarollchesse.png" alt="California roll chesse" width="200">
+    <h3>California roll chesse (8 piece)</h3>
+    <p>نفس الكاليفورينا رول لكن يوضع فوقه قطع جبن الهمبرغر تكون ذايبة شوي.</p>
+    <select onchange="updatePrice('California roll chesse', this.value)">
+      <option value="">اختر الحشو</option>
+      <option value="THON">تونة - 1190DA T</option>
+      <option value="POULET CRISPY">دجاج كريسبي - 1290DA P</option>
+      <option value="CREVETTE">كروفات - 1490DA C</option>
+      <option value="SAUMON">سلمون - 1490DA SA</option>
+      <option value="SURIMI">سوريمي - 1490DA SU</option>
+    </select>
+    <p class="price" id="California roll chesse-price">السعر: -</p>
+    <button onclick="addToCart('California roll chesse')">أضف للسلة</button>
+  </div>
+
+<!-- Les Nems -->
+  <div class="item">
+    <img src="images/nems.png" alt="Les Nems" width="200">
+    <h3>Les Nems (4 piece)</h3>
+    <p>ورق الارز محشي بجزر و شعيرية صينية و دجاج او لحم.</p>
+    <select onchange="updatePrice('Les Nems', this.value)">
+      <option value="">اختر الحشو</option>
+      <option value="POULET">دجاج - 690DA P</option>
+      <option value="VIANDE">لحم - 890DA V</option>
+    </select>
+    <p class="price" id="Les Nems-price">السعر: -</p>
+    <button onclick="addToCart('Les Nems')">أضف للسلة</button>
+  </div>
+
+</section>
+
+
+<!-- 📝 نموذج الزبون -->
+<form id="orderForm" onsubmit="confirmOrder(event)">
+  <h3 id="formTitle">📝 بيانات الزبون</h3>
+  <input type="text" id="custName" placeholder="الاسم" required>
+  <input type="tel" id="custPhone" placeholder="رقم الهاتف (10 أرقام)" required>
+  <span id="phoneError" style="color:red; display:none;">⚠️ رقم الهاتف يجب أن يكون 10 أرقام صحيحة فقط!</span>
+  <input type="text" id="custAddress" placeholder="العنوان" required>
+  <select id="custArea" required>
+    <option value="">اختر المنطقة</option>
+    <option value="تفاحي">تفاحي</option>
+    <option value="adll فلفلة">adll فلفلة</option>
+    <option value="الفتوي">الفتوي</option>
+    <option value="قرية لعرايس">قرية لعرايس</option>
+    <option value="بلاطان">بلاطان</option>
+    <option value="القرية">القرية</option>
+    <option value="الغطسة">الغطسة</option>
+    <option value="ليابيي">ليابيي</option>
+    <option value="شاطئ 8">شاطئ 8</option>
+    <option value="شاطئ 10">شاطئ 10</option>
+    <option value="الماناج">الماناج</option>
+    <option value="شاطئ 7">شاطئ 7</option>
+    <option value="القرية السياحية">القرية السياحية</option>
+    <option value="مارينا دور">مارينا دور</option>
+    <option value="سانتيفي">سانتيفي</option>
+    <option value="بوزعرورة">بوزعرورة</option>
+    <option value="كوسيدار">كوسيدار</option>
+    <option value="جان دارك">جان دارك</option>
+    <option value="لابيسين">لابيسين</option>
+    <option value="33">33</option>
+    <option value="حمادي كرومة">حمادي كرومة</option>
+    <option value="فالي">فالي</option>
+    <option value="لاسيا">لاسيا</option>
+    <option value="ليزالي">ليزالي</option>
+    <option value="لبلاد">لبلاد</option>
+    <option value="كامي">كامي</option>
+    <option value="مرج الديب">مرج الديب</option>
+    <option value="بوبعلى">بوبعلى</option>
+    <option value="فوبور">فوبور</option>
+    <option value="واد الوحش">واد الوحش</option>
+    <option value="مسيون 1">مسيون 1</option>
+    <option value="مسيون 2">مسيون 2</option>
+    <option value="سانسو">سانسو</option>
+    <option value="سيسال">سيسال</option>
+    <option value="فاووث">فاووث</option>
+    <option value="ليباتيمو الشناوة">ليباتيمو الشناوة</option>
+    <option value="صالح بولكروة">صالح بولكروة</option>
+    <option value="زفزاف 1">زفزاف 1</option>
+    <option value="زفزاف 2">زفزاف 2</option>
+    <option value="الجامعة">الجامعة</option>
+    <option value="الاقامات الجامعية للإناث">الاقامات الجامعية للإناث</option>
+    <option value="الاقامات الجامعية للذكور">الاقامات الجامعية للذكور</option>
+    <option value="الحدائق">الحدائق</option>
+    <option value="غير ذلك">غير ذلك</option>
+  </select>
+    <input type="text" id="custTime" placeholder="وقت التوصيل" required>
+  <button type="submit" id="confirmBtn">تأكيد الطلب</button>
+</form> 
+
+<!-- 🛒 السلة -->
+<div id="cart">
+  <h3 id="cartTitle">🛒 سلة المشتريات</h3>
+  <ul id="cartItems"></ul>
+  <p><strong id="cartTotalLabel">المجموع: <span id="cartTotal">0</span> DA</strong></p>
+  <p><strong id="deliveryLabel">سعر التوصيل: <span id="deliveryPrice">0</span> DA</strong></p>
+  <p id="deliveryMessage" style="color:green; font-weight:bold;"></p>
+  <p><strong id="finalTotalLabel">المجموع الكلي: <span id="finalTotal">0</span> DA</strong></p>
+</div>
+
+ <!-- 🪙 رصيد النقاط -->
+<div id="pointsSection">
+  <p>🪙 رصيدك الحالي: <span id="pointsBalance">0</span> نقطة</p>
+  <button id="checkPoints">🔄 تحديث رصيد النقاط</button>
+</div>
+
+
+<!-- 📝 ملخص الطلب النهائي -->
+<div id="orderSummary" style="background:#f1f1f1; padding:20px; margin:20px; border-radius:8px; display:none;">
+  <h3>📋 ملخص الطلب</h3>
+  <p id="summaryItems"></p>
+  <p id="summaryDelivery"></p>
+  <p id="summaryTotal"></p>
+  <p id="summaryPoints"></p>
+</div>
+<!-- ✅ التذييل مع بطاقة العمل -->
+<footer>
+  <div>
+    <p>📞 07 92 10 60 84</p>
+    <p>📸 @Na_Sushi_21</p>
+    <p>🌐 https://nasushi-devweb.onrender.com/</p>
+  </div>
+  <img src="images/business-card.png" alt="بطاقة العمل">
+</footer>
+
+<script src="server.php"></script>
+
+</body>
+</html>
